@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+<!-- Deposit Page Title -->
+<h2 class="text-center">Deposit</h2>
+<hr>
+
+<!-- Deposit Form -->
+<div class="container mt-4">
+    <form action="/deposit" method="POST">
+        <!-- Deposit Amount Input -->
+        <div class="mb-3">
+            <label for="depositAmount" class="form-label">Deposit Amount</label>
+            <input
+                type="number"
+                name="deposit"
+                class="form-control"
+                id="depositAmount"
+                placeholder="Enter amount to deposit"
+                required>
+        </div>
+        <!-- Submit Button -->
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+{% endblock %}

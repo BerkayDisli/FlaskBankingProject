@@ -1,0 +1,107 @@
+{% extends 'base.html' %}
+{% block content %}
+
+{% if 'user' in session %}
+<head>
+  <title>Your Account</title>
+</head>
+
+<div class="container px-5 my-5">
+  <div class="card mb-3" style="max-width: 540px;">
+    <div class="row g-0">
+      <div class="col-md-4 p-4 d-flex justify-content-center align-items-center">
+        <img src="/static/images/users.png" height="512" width="512" alt="User Icon">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title">Account Information</h5>
+          <div class="card" style="width: 18rem;">
+            <ul class="list-group list-group-flush">
+              <form method="post">
+                <label><b>Username:</b></label>
+                <li class="list-group-item">
+                    <label for="username"></label><input type="text" placeholder="" value="{{ session['user'] }}" class="form-control" id="username" name="username" readonly>
+                </li>
+
+                <label><b>Balance:</b></label>
+                <li class="list-group-item">
+                    <label for="balance"></label><input type="text" placeholder="0" value="{{ money }}" class="form-control" id="balance" name="balance" readonly>
+                </li>
+              </form>
+            </ul>
+          </div>
+          <hr>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% else %}
+
+<body>
+  <main role="main">
+    <section class="jumbotron text-center">
+      <div class="container">
+        <h1 class="jumbotron-heading">Online Bank</h1>
+        <p class="lead text-muted">Login to use the amazing banking website.</p>
+        <p>
+          <a href="/register" class="btn btn-primary my-2">Sign Up</a>
+          <a href="/login" class="btn btn-secondary my-2">Log In</a>
+        </p>
+      </div>
+    </section>
+
+    <div class="album py-5 bg-light">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="card mb-4 box-shadow">
+              <img src="/static/images/investment.jpg" class="card-img-top" alt="">
+              <div class="card-body">
+                <p class="card-text">Investment</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-primary">Learn More</button>
+                  </div>
+                  <small class="text-muted">9 mins</small>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card mb-4 box-shadow">
+              <img src="/static/images/piggybank.jpg" class="card-img-top" alt="">
+              <div class="card-body">
+                <p class="card-text">Savings</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-primary">Learn More</button>
+                  </div>
+                  <small class="text-muted">9 mins</small>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card mb-4 box-shadow">
+              <img src="/static/images/insurance.jpg" class="card-img-top" alt="">
+              <div class="card-body">
+                <p class="card-text">Insurance</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-primary">Learn More</button>
+                  </div>
+                  <small class="text-muted">9 mins</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+
+{% endif %}
+
+{% endblock %}

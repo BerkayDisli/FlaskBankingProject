@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+<!-- Title -->
+<h2 class="text-center">This is the Withdraw Page</h2>
+<hr>
+
+<!-- Withdraw Form -->
+<div class="container mt-4">
+  <form action="/withdraw" method="post">
+    <!-- Withdraw Amount Input -->
+    <div class="mb-3">
+      <label for="withdrawAmount" class="form-label">Withdraw Amount</label>
+      <input type="number" name="withdraw" class="form-control" id="withdrawAmount" placeholder="Enter amount to withdraw" required>
+    </div>
+
+    <!-- Submit Button -->
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+{% endblock %}
